@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Pyracles Store</title>
+     <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">PYRACLES SLIDES</a>
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="about.html">WHO WE ARE</a>
+            <a href="shop.html">SHOP</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    <section class="contact1" id="contact1">
+    
+        <h1 class="heading2"><span>CONTACT</span></h1>
+        <div class="row1">
+            <form action="">
+                <input type="text" class="box1" placeholder="Name">
+                <input type="email" class="box1" placeholder="Email Address">
+                <input type="number" class="box1" placeholder="Phone Number">
+                <textarea name="" class="box1" placeholder="Message" id="" cols="30" rows="10"></textarea>
+                <button type="button" onclick="submitForm()" class="btn1">SEND</button>
+                 
+            </form>
+            <section class="about" id="about">
+            <div class="content">
+                <div class="row">
+                    <div class="image-container">
+                <img src="contactimage.png" alt="">
+                </div>
+            </section>
+            <script>
+
+            function submitForm() {
+                // Prevent form from submitting normally
+                event.preventDefault();
+        
+                // Display alert box
+                alert('Message has been SENT! NOW GET A PAIR OF NAMI SLIDES! ;)');
+            }
+        </script>
+        </div>
+        <div class="card">
+            <img src="cards.png" class="image-container1">
+                </div>
+                <div class="credit">
+                    &copy;<span> 2024 The Auracles. I do not own any products/contents. USED FOR PROJECT ONLY, All rights belong to the respective owners.</span>
+                </div>
+    </section>
+    </body>
+    </html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Pyracles Store</title>
+     <link href="style2.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">Pyracles Slides</a>
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="about.html">WHO WE ARE</a>
+            <a href="shop.html">SHOP</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+</header>
+
+<section class="products" id="products">
+    <h1 class="heading3">NAMI 2.0<span> IS HERE</span></h1>
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="whiteslides.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x FIRST LAUNCH NAMI SLIDE', 10700)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>FIRST RELEASE NAMI SLIDE</h3>
+                <div class="price">₱10,700</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="blackslides.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x DEEP SEA BALCK NAMI', 5600)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>DEEP SEA BLACK NAMI </h3>
+                <div class="price">₱5,600<span></span></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="blueslides.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x NEPTUNE NAMI SLIDE 2.0', 5600)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>NEPTUNE NAMI SLIDE 2.0</h3>
+                <div class="price">₱5,600</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="orangeslides.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x LAVA NAMI SLIDE 2.0', 5600)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>LAVA NAMI SLIDE 2.0</h3>
+                <div class="price">₱5,600</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="pinkslides.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x VALENTINES NAMI SLIDE', 5600)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>VALENTINES NAMI SLIDE</h3>
+                <div class="price">₱5,600</div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="image">
+                <img src="redslides.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x KING OF HEARTS NAMI SLIDE', 5600)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>VALENTINES NAMI SLIDE</h3>
+                <div class="price">₱5,600</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="whitetshirt.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x AURA GANG WHITE', 3000)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>AURA GANG WHITE LIMITED EDITION</h3>
+                <div class="price">₱3,000</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="bluetshirt.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('1x AURA GANG BLUE', 3000)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>AURA GANG BLUE LIMITED EDITION</h3>
+                <div class="price">₱3,000</div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="cart-container">
+    <h2>YOUR CART</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </ul>
+    <p>TOTAL: PESOS/₱<span id="cart-total">0</span></p>
+    <button onclick="checkout()">CHECK OUT</button>
+    <button onclick="clearCart()">REMOVE ALL</button>
+    </div>
+
+        <script>
+        let cart = [];
+        let cartTotal = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            cartTotal += itemPrice;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const cartTotalElement = document.getElementById("cart-total");
+            cartItems.innerHTML = "";
+            cart.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ₱${item.price}`;
+                cartItems.appendChild(li);
+            });
+            cartTotalElement.textContent = cartTotal.toFixed(2);
+        }
+
+        function checkout() {
+            alert(`Total: ₱${cartTotal.toFixed(2)}\nITEM/S PURCHASED! THANK YOU! (READ FAQ FOR SHIPPING INFO)`);
+        }
+
+        function clearCart() {
+            cart = [];
+            cartTotal = 0;
+            updateCart();
+        }
+    </script>
+
+<div class="card">
+    <img src="cards.png" class="image-container1">
+        </div>
+        <div class="card">
+            &copy;<span> 2024 The Auracles. I do not own any products/contents. USED FOR PROJECT ONLY, All rights belong to the respective owners.</span>
+        </div>
+
+    </body>
+    </html>
